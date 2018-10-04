@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+wht=$'\e[0m'
+grn=$'\e[1;32m'
+rd=$'\e[1;31m'
+gitf=".git"
+
+import lib/init
+
+$1
