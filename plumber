@@ -1,11 +1,24 @@
 #!/usr/bin/env sh
 
-wht=$'\e[0m'
-grn=$'\e[1;32m'
-rd=$'\e[1;31m'
+# Guide for suport color in sh
+# https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+white=$'\e[0m'
+green=$'\e[1;32m'
+red=$'\e[1;31m'
+cyan=$'\e[0;36m'
+
+okfn () {
+  echo $green"OK"$white
+  exit 0
+}
+
+failfn () {
+  echo $red"FAIL"$white
+  exit $1
+}
 
 gitf=".git"
 
 import lib/init.sh
 
-$1
+$1 $@
