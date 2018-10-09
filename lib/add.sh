@@ -1,7 +1,7 @@
 add() {
   blob=`git hash-object -w $2`
   if [ -z "${blob}" ]; then
-    echo $white"Something wrong when create blob"$white
+    echo $white"Something wrong when created blob"$white
     failfn 1
   fi
 
