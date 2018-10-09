@@ -1,11 +1,12 @@
 binary = plumber
+binaryalias = plr
 
 BIN_DIR ?= /usr/local/bin
 DIST_DIR ?= $(PWD)/bin
 
-BUILD := $(DIST_DIR)/$(binary)
+BUILD := $(DIST_DIR)/$(binaryalias)
 KOALA := $(BIN_DIR)/koala
-PLUMBER := $(BIN_DIR)/$(binary)
+PLUMBER := $(BIN_DIR)/$(binaryalias)
 
 .PHONY: clean
 
