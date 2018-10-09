@@ -1,15 +1,14 @@
 init() {
   [[ -z "${PWD}" ]] && PWD=`pwd`
 
-  [[ -z "${1}" ]] && GIT_DIR="$PWD/$gitf" || GIT_DIR="$1/$gitf"
+  [[ -z "${2}" ]] && GIT_DIR="$PWD/$gitf" || GIT_DIR="$2/$gitf"
 
   if [ -d "$GIT_DIR" ]; then
-    echo $wht"Already exists one repository on $GIT_DIR"$wht
-    echo $rd"FAIL"$wht
-    exit 1
+    echo $white"Already exists one repository on $GIT_DIR"$white
+    failfn 1
   fi
 
-  echo $wht"Creating empty Git repository in $GIT_DIR"$wht
+  echo $white"Creating empty Git repository in $GIT_DIR"$white
 
   mkdir -p $GIT_DIR/objects \
     $GIT_DIR/info \
@@ -46,5 +45,5 @@ EOF
 
   echo "ref: refs/heads/master" > $GIT_DIR/HEAD
 
-  echo $grn"OK"$wht
+  okfn
 }
