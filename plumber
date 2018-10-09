@@ -19,6 +19,9 @@ failfn () {
 
 gitf=".git"
 
+import lib/add.sh
+import lib/branch.sh
+import lib/checkout.sh
 import lib/init.sh
 
 $1 $@
