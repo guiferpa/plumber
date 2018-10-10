@@ -1,15 +1,18 @@
 # b - blob
 add() {
-  b=`git hash-object -w $2`
-  if [ -z "${b}" ]; then
-    echo $white"Something wrong when created blob"$white
-    failfn 1
-  fi
+  local args=($@)
+  for a in "${args[@]:1}"; do
+    if [[ -f "${a}" ]]; then
+      local b=`git hash-object -w $a`
+      if [ -z "${b}" ]; then
+        echo $white"Something wrong when created blob"$white
+        failfn 1
+      fi
 
-  if [ -f "${2}" ]; then
-    `git update-index --add --cacheinfo 100644 $b $2`
-  fi
+      `git update-index --add --cacheinfo 100644 $b $a`
+    fi
+    echo $cyan"Blob$white $b as $a added in index"
+  done
 
-  echo $cyan"Blob$white $b as $2 added in index"
   okfn
 }
