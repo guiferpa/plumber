@@ -28,5 +28,8 @@ ln -s /Users/user/src/github.com/guiferpa/plumber/bin/plr /usr/local/bin/plr
 
 ```sh
 > make clean
+
+rm -rf /usr/local/bin/plr
+rm -rf /Users/user/src/github.com/guiferpa/plumber/bin/plr
 ```
 > :triangular_flag_on_post: **make clean** will go to clean all builded and installed **plumber**.
