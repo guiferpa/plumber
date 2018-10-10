@@ -4,17 +4,17 @@
 # m - commit message
 # pc - previous commit id
 commit() {
-  cb=`cbranchfn`
+  local cb=`cbranchfn`
   read -p "Commit message: " m
 
-  t=`git write-tree`
+  local t=`git write-tree`
   if [ -z "${t}" ]; then
     echo $white"Something wrong when created tree"$white
     failfn 1
   fi
   echo $cyan"Tree"$white" $t created successfully"$white
 
-  pc=`cat $heads/$cb 2> /dev/null`
+  local pc=`cat $heads/$cb 2> /dev/null`
   [[ "${?}" == "0" ]] \
     && c=`echo "$m" | git commit-tree $t -p $pc` \
     || c=`echo "$m" | git commit-tree $t`
