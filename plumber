@@ -7,6 +7,14 @@ green=$'\e[1;32m'
 red=$'\e[1;31m'
 cyan=$'\e[0;36m'
 
+gitf=".git"
+head="$gitf/HEAD"
+heads="$gitf/refs/heads"
+
+cbranchfn () {
+  cat $head | awk '{print substr($2, 12, length($2))}'
+}
+
 okfn () {
   echo $green"OK"$white
   exit 0
@@ -16,8 +24,6 @@ failfn () {
   echo $red"FAIL"$white
   exit $1
 }
-
-gitf=".git"
 
 import lib/add.sh
 import lib/commit.sh

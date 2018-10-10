@@ -1,13 +1,19 @@
+# cb - current branch
+# bs - branches
+# b - branch
+# tmpl - template
+# c - commit id
 branch() {
-  cb=`cat .git/HEAD | awk '{print substr($2, 12, length($2))}'`
-  bs=`ls -1 $gitf/refs/heads | sort`
+  cb=`cbranchfn`
+  bs=`ls -1 $heads | sort`
   if [ ! -z "${bs}" ]; then
     for b in $bs; do
-      h=`cat $gitf/refs/heads/$b`
+      c=`cat $heads/$b`
+      tmpl="$b"$white" -> $c"$white
       if [ "${b}" == "${cb}" ]; then
-        echo $cyan"$b"$white" -> $h"$white
+        echo $cyan"$tmpl"
       else
-        echo $white"$b"$white" -> $h"$white
+        echo $white"$tmpl"
       fi
     done | column
   fi

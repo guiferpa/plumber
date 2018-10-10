@@ -1,14 +1,15 @@
+# b - blob
 add() {
-  blob=`git hash-object -w $2`
-  if [ -z "${blob}" ]; then
+  b=`git hash-object -w $2`
+  if [ -z "${b}" ]; then
     echo $white"Something wrong when created blob"$white
     failfn 1
   fi
 
   if [ -f "${2}" ]; then
-    `git update-index --add --cacheinfo 100644 $blob $2`
+    `git update-index --add --cacheinfo 100644 $b $2`
   fi
 
-  echo $cyan"Blob$white $blob as $2 added in index"
+  echo $cyan"Blob$white $b as $2 added in index"
   okfn
 }

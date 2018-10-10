@@ -1,7 +1,11 @@
+# cb - current branch
+# c - commit id
+# t - tree
+# m - commit message
+# pc - previous commit id
 commit() {
-  cb=`cat .git/HEAD | awk '{print substr($2, 12, length($2))}'`
-  echo "Write a commit message?"
-  read m
+  cb=`cbranchfn`
+  read -p "Commit message: " m
 
   t=`git write-tree`
   if [ -z "${t}" ]; then
@@ -10,7 +14,10 @@ commit() {
   fi
   echo $cyan"Tree"$white" $t created successfully"$white
 
-  c=`echo "$m" | git commit-tree $t`
+  pc=`cat $heads/$cb 2> /dev/null`
+  [[ "${?}" == "0" ]] \
+    && c=`echo "$m" | git commit-tree $t -p $pc` \
+    || c=`echo "$m" | git commit-tree $t`
   if [ -z "${c}" ]; then
     echo $white"Something wrong when created commit"$white
     failfn 1
