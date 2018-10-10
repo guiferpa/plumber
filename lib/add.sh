@@ -8,7 +8,6 @@ add() {
         echo $white"Something wrong when created blob"$white
         failfn 1
       fi
-
       `git update-index --add --cacheinfo 100644 $b $a`
     fi
     echo $cyan"Blob$white $b as $a added in index"
