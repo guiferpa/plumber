@@ -1,7 +1,6 @@
 # b - blob
 add() {
-  local args=($@)
-  for a in "${args[@]:1}"; do
+  for a in $@; do
     if [[ -f "${a}" ]]; then
       local b=`git hash-object -w $a`
       if [ -z "${b}" ]; then

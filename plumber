@@ -6,18 +6,20 @@ white=$'\e[0m'
 green=$'\e[1;32m'
 red=$'\e[1;31m'
 cyan=$'\e[0;36m'
+yellow=$'\e[1;33m'
 
 gitf=".git"
 head="$gitf/HEAD"
 heads="$gitf/refs/heads"
-
-cbranchfn () {
-  cat $head | awk '{print substr($2, 12, length($2))}'
-}
+rheads="ref: refs/heads"
 
 okfn () {
   echo $green"OK"$white
   exit 0
+}
+
+warnfn() {
+  echo $yellow"WARN"$white" $1"
 }
 
 failfn () {
@@ -28,7 +30,7 @@ failfn () {
 import lib/add.sh
 import lib/commit.sh
 import lib/branch.sh
-import lib/checkout.sh
 import lib/init.sh
 
-$1 $@
+args=($@)
+$1 ${args[@]:1}

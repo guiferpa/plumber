@@ -4,7 +4,7 @@
 # m - commit message
 # pc - previous commit id
 commit() {
-  local cb=`cbranchfn`
+  local cb=`cat $head | awk '{print substr($2, 12, length($2))}'`
   read -p "Commit message: " m
 
   local t=`git write-tree`
