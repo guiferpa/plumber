@@ -5,6 +5,8 @@ I am a brazilian [Git](https://git-scm.com) user and when watched a video about 
 
 ## Install
 **plumber** needs just [Git](https://git-scm.com), [Koala](https://github.com/guiferpa/koala) as bundler and a Unix based OS to run the commands.
+
+### Manual installation
 ```sh
 > git clone git@github.com:guiferpa/plumber.git
 
