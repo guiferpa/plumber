@@ -1,7 +1,7 @@
 init() {
   [[ -z "${PWD}" ]] && PWD=`pwd`
 
-  [[ -z "${2}" ]] && GIT_DIR="$PWD/$gitf" || GIT_DIR="$2/$gitf"
+  [[ -z "${1}" ]] && GIT_DIR="$PWD/$gitf" || GIT_DIR="$2/$gitf"
 
   if [ -d "$GIT_DIR" ]; then
     echo $white"Already exists one repository on $GIT_DIR"$white
@@ -43,7 +43,7 @@ EOF
 
   echo "Unnamed repository; edit this file 'description' to name the repository." > $GIT_DIR/description
 
-  echo "ref: refs/heads/master" > $GIT_DIR/HEAD
+  echo "$rheads/master" > $GIT_DIR/HEAD
 
   okfn
 }
