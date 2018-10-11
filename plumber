@@ -1,5 +1,49 @@
 #!/usr/bin/env sh
 
+#================================================================
+# HEADER
+#================================================================
+#% Synopsis
+#+    ${SCRIPT_NAME} [-hv] [c] <files...>
+#%
+#% Description
+#%    A modified rewrite of Git's porcelain layer for study and fun
+#%
+#% Commands
+#%    add           Add file to generate blob and update index
+#%    branch        List, create or fork branches
+#%    commit        Create a commit from a tree to ref in current branch
+#%    init          The big bang but in your current directory, 
+#%                  create the Git structure folder for initialize Git (default=./.git)
+#%
+#% Options
+#%    -h, --help         Print this help
+#%    -v, --version      Print script information
+#%
+#% Examples
+#%    ${SCRIPT_NAME} init - Adding some files
+#%    ${SCRIPT_NAME} add hello.txt world.txt - Adding some files
+#%
+#================================================================
+#- Implementation
+#-    version         ${SCRIPT_VERSION}
+#-    author          ${SCRIPT_AUTHOR}
+#-    license         ${SCRIPT_LICENSE}
+#-
+#================================================================
+#  History
+#     2015/03/01 : mvongvilay : Script creation
+#     2015/04/01 : mvongvilay : Add long options and improvements
+# 
+#================================================================
+#  Debug option
+#    set -n  # Uncomment to check your syntax, without execution.
+#    set -x  # Uncomment to debug this shell script
+#
+#================================================================
+# END_OF_HEADER
+#================================================================
+
 # Guide for suport color in sh
 # https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
 white=$'\e[0m'
@@ -32,5 +76,52 @@ import lib/branch.sh
 import lib/commit.sh
 import lib/init.sh
 
+# Usage section with credits for link below
+# https://www.uxora.com/unix/shell-script/18-shell-script-template
+SCRIPT_HEADSIZE=$(head -200 ${0} |grep -n "^# END_OF_HEADER" | cut -f1 -d:)
+SCRIPT_NAME="$(basename ${0})"
+SCRIPT_VERSION="v0.1.0"
+SCRIPT_AUTHOR="Guilherme Paixão <guiferpa@gmail.com>"
+SCRIPT_LICENSE="MIT (Massachusetts Institute of Technology)"
+
+helpfn() { 
+  printf "Usage: "; head -${SCRIPT_HEADSIZE:-99} ${0} | \
+    grep -e "^#+" | \
+    sed -e "s/^#+[ ]*//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" \
+  && okfn; 
+}
+
+helpfullfn() { 
+  head -${SCRIPT_HEADSIZE:-99} ${0} | \
+  grep -e "^#[%+-]" | \
+  sed -e "s/^#[%+-]//g" \
+    -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" \
+    -e "s/\${SCRIPT_VERSION}/${SCRIPT_VERSION}/g" \
+    -e "s/\${SCRIPT_AUTHOR}/${SCRIPT_AUTHOR}/g" \
+    -e "s/\${SCRIPT_LICENSE}/${SCRIPT_LICENSE}/g" \
+  && okfn; 
+}
+
+distfn() { 
+  head -${SCRIPT_HEADSIZE:-99} ${0} | \
+  grep -e "^#-" | \
+  sed -e "s/^#-//g" \
+    -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" \
+    -e "s/\${SCRIPT_VERSION}/${SCRIPT_VERSION}/g" \
+    -e "s/\${SCRIPT_AUTHOR}/${SCRIPT_AUTHOR}/g" \
+    -e "s/\${SCRIPT_LICENSE}/${SCRIPT_LICENSE}/g" \
+  && okfn; 
+}
+
+[ "${1}" == "-h" ] || \
+[ -z "${1}" ] && helpfn
+
+[ "${1}" == "--help" ] && helpfullfn
+
+[ "${1}" == "-v" ] || \
+[ "${1}" == "--version" ] && distfn
+
 args=($@)
 $1 ${args[@]:1}
+
+failfn 1
