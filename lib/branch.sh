@@ -52,7 +52,7 @@ fork_branch() {
 # fmt - format
 show_branch() {
   local fmt="%(if)%(HEAD)%(then)$cyan* $white%(else)%(end)%(refname:short) -> %(objecttype):%(objectname)"
-  git for-each-ref --format="$fmt" | column
+  git for-each-ref --format="$fmt" refs/heads/ | column
   okfn
 }
 
