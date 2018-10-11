@@ -28,8 +28,8 @@ failfn () {
 }
 
 import lib/add.sh
-import lib/commit.sh
 import lib/branch.sh
+import lib/commit.sh
 import lib/init.sh
 
 args=($@)

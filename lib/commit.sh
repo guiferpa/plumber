@@ -3,16 +3,23 @@
 # t - tree
 # m - commit message
 # pc - previous commit id
+# pt - previous tree id
 commit() {
-  local cb=`cat $head | awk '{print substr($2, 12, length($2))}'`
-  read -p "Commit message: " m
-
+  local cc=`git show-ref --head | grep HEAD | awk '{print $1}'`
+  local pt=`git cat-file -p $cc | grep tree | awk '{print $2}'`
   local t=`git write-tree`
+  if [ "${t}" == "${pt}" ]; then
+    echo $white"Tree already commited"$white
+    failfn 1
+  fi
   if [ -z "${t}" ]; then
     echo $white"Something wrong when created tree"$white
     failfn 1
   fi
   echo $cyan"Tree"$white" $t created successfully"$white
+
+  local cb=`cat $head | awk '{print substr($2, 12, length($2))}'`
+  read -p "Commit message: " m
 
   local pc=`cat $heads/$cb 2> /dev/null`
   if [ -z "${pc}" ]; then
