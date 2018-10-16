@@ -21,7 +21,7 @@
 #%    -v, --version      Print script information
 #%
 #% Examples
-#%    ${SCRIPT_NAME} init - Adding some files
+#%    ${SCRIPT_NAME} init - Creating structure of .git folder
 #%    ${SCRIPT_NAME} add hello.txt world.txt - Adding some files
 #%
 #================================================================
