@@ -76,6 +76,7 @@ import lib/add.sh
 import lib/branch.sh
 import lib/commit.sh
 import lib/init.sh
+import lib/log.sh
 import lib/status.sh
 
 # Usage section with credits for link below
