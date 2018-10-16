@@ -15,6 +15,7 @@
 #%    commit        Create a commit from a tree to ref in current branch
 #%    init          The big bang but in your current directory, 
 #%                  create the Git structure folder for initialize Git (default=./.git)
+#%    status        Retrieve the current state of your stage (index)
 #%
 #% Options
 #%    -h, --help         Print this help
