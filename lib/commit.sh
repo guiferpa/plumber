@@ -6,7 +6,7 @@
 # pt - previous tree id
 commit() {
   local cc=`git show-ref --head | grep HEAD | awk '{print $1}'`
-  local pt=`git cat-file -p $cc | grep tree | awk '{print $2}'`
+  local pt=`git cat-file -p $cc | grep tree | awk '{print $2}' 2> /dev/null`
   local t=`git write-tree`
   if [ "${t}" == "${pt}" ]; then
     echo $white"Tree already commited"$white
