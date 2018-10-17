@@ -9,6 +9,10 @@
 #% Description
 #%    A modified rewrite of Git's porcelain layer for study and fun
 #%
+#% Options
+#%    -h, --help         Print this help
+#%    -v, --version      Print script information
+#%
 #% Commands
 #%    add           Add file to generate blob and update index
 #%    branch        List, create or fork branches
@@ -16,10 +20,7 @@
 #%    init          The big bang but in your current directory, 
 #%                  create the Git structure folder for initialize Git (default=./.git)
 #%    status        Retrieve the current state of your stage (index)
-#%
-#% Options
-#%    -h, --help         Print this help
-#%    -v, --version      Print script information
+#%    log           Retrieve the current history of trees committed
 #%
 #% Examples
 #%    ${SCRIPT_NAME} init - Creating structure of .git folder
