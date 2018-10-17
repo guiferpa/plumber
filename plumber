@@ -22,6 +22,14 @@
 #%    status        Retrieve the current state of your stage (index)
 #%    log           Retrieve the current history of trees committed
 #%
+#% Arguments
+#%    branch        --fork - fork the current history of trees committed from current
+#%                  head (ref)
+#%    init          <path> - set a custom path to create the .git folder
+#%    status        --all - retrieve all files independent of your state
+#%    log           <count> - set a max for count, --all - retrieve all history since
+#%                  the initial tree commit
+#%
 #% Examples
 #%    ${SCRIPT_NAME} init - Creating structure of .git folder
 #%    ${SCRIPT_NAME} add hello.txt world.txt - Adding some files
