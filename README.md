@@ -1,7 +1,7 @@
 # plumber
 
 ## The motivation
-I am a brazilian [Git](https://git-scm.com) user and when watched a video about Git of [Jonathan Lima](https://github.com/greenboxal) named ["Deep into Git"](https://www.youtube.com/watch?v=H2j7e81J798) I thinked will be very good idea create the basic commands of Git for study a technology that I used in everytime of my programmer life. However I want rewrite the porcelain layer of the Git and by consequence learn more about it.
+I am a brazilian [Git](https://git-scm.com) user and when watched a video about Git of [Jonathan Lima](https://github.com/greenboxal) named ["Digging deep into Git"](https://www.youtube.com/watch?v=H2j7e81J798) I thinked will be very good idea create the basic commands of Git for study a technology that I used in everytime of my programmer life. However I want rewrite the porcelain layer of the Git and by consequence learn more about it.
 
 ## Install
 
@@ -40,3 +40,15 @@ rm -rf /usr/local/bin/plr
 rm -rf /Users/user/src/github.com/guiferpa/plumber/bin/plr
 ```
 > :triangular_flag_on_post: **make clean** will go to clean all builded and installed **plumber**.
+
+## How to works
+
+### Talk about
+- [Becoming the Mario Bros of Git](https://speakerdeck.com/guiferpa/becoming-the-mario-bros-of-git) by Guilherme Paixão
+-  [Digging deep into Git](https://www.youtube.com/watch?v=H2j7e81J798) by [Jonathan Lima](https://github.com/greenboxal)
+
+### Step by step
+> :warning: _Work in progress_
+
+## License
+[MIT](https://github.com/guiferpa/plumber/blob/master/LICENSE)
