@@ -5,8 +5,14 @@
 # pc - previous commit id
 # pt - previous tree id
 commit() {
-  local cc=`git show-ref --head | grep HEAD | awk '{print $1}'`
-  local pt=`git cat-file -p $cc | grep tree | awk '{print $2}' 2> /dev/null`
+  local stg=`git diff --cached --shortstat`
+  if [ -z "${stg}" ]; then
+    echo $white"No cached diff"$white
+    failfn 1
+  fi
+
+  local cc=`git show-ref --head | grep -v refs/ | awk '{print $1}'`
+  local pt=`git cat-file -p $cc 2> /dev/null | grep tree | awk '{print $2}'`
   local t=`git write-tree`
   if [ "${t}" == "${pt}" ]; then
     echo $white"Tree already commited"$white
