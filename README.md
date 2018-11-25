@@ -43,9 +43,13 @@ rm -rf /Users/user/src/github.com/guiferpa/plumber/bin/plr
 
 ## How to works
 
-### Talk about
-- [Becoming the Mario Bros of Git](https://speakerdeck.com/guiferpa/becoming-the-mario-bros-of-git) by Guilherme Paixão
--  [Digging deep into Git](https://www.youtube.com/watch?v=H2j7e81J798) by [Jonathan Lima](https://github.com/greenboxal)
+### Links
+- [Git Internals](https://git-scm.com/book/en/v1/Git-Internals)
+- [Understanding the Index File](https://mincong-h.github.io/2018/04/28/git-index) by [@mincong-h](https://github.com/mincong-h)
+- [Becoming the Mario Bros of Git](https://speakerdeck.com/guiferpa/becoming-the-mario-bros-of-git) by [@guiferpa](https://github.com/guiferpa)
+- [Digging deep into Git](https://www.youtube.com/watch?v=H2j7e81J798) by [Jonathan Lima](https://github.com/greenboxal)
+- [Understanding Git Data Model](https://hackernoon.com/https-medium-com-zspajich-understanding-git-data-model-95eb16cc99f5) by Zvonimir Spajic
+- [Understanding Git Branching](https://hackernoon.com/understanding-git-branching-2662f5882f9) by Zvonimir Spajic
 
 ### Step by step
 > :warning: _Work in progress_
