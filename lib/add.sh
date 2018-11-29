@@ -1,9 +1,9 @@
 # b - blob
 add() {
   for a in $@; do
-    `cat $a > /dev/null 2> /dev/null`
+    local p=`cat $a 2> /dev/null`
     if [[ "${?}" == "0" ]]; then
-      local b=`git hash-object -w $a`
+      local b=`plr write-object $p`
       if [ -z "${b}" ]; then
         echo $white"Something wrong when created blob"$white
         failfn 1

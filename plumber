@@ -68,7 +68,6 @@ heads="$gitf/refs/heads"
 rheads="ref: refs/heads"
 
 okfn () {
-  echo $green"OK"$white
   exit 0
 }
 
@@ -77,10 +76,11 @@ warnfn() {
 }
 
 failfn () {
-  echo $red"FAIL"$white
   exit $1
 }
 
+import lib/hash_object.sh
+import lib/write_object.sh
 import lib/add.sh
 import lib/branch.sh
 import lib/commit.sh
@@ -133,7 +133,6 @@ distfn() {
 [ "${1}" == "-v" ] || \
 [ "${1}" == "--version" ] && distfn
 
-args=($@)
-$1 ${args[@]:1}
+$(echo $1 | sed "s/-/_/") ${@:2}
 
 failfn 1
