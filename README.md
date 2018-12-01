@@ -41,9 +41,7 @@ rm -rf /Users/user/src/github.com/guiferpa/plumber/bin/plr
 ```
 > :triangular_flag_on_post: **make clean** will go to clean all builded and installed **plumber**.
 
-## How to works
-
-### Links
+## Links
 - [Git Internals](https://git-scm.com/book/en/v1/Git-Internals)
 - [Understanding the Index File](https://mincong-h.github.io/2018/04/28/git-index) by [@mincong-h](https://github.com/mincong-h)
 - [Becoming the Mario Bros of Git](https://speakerdeck.com/guiferpa/becoming-the-mario-bros-of-git) by [@guiferpa](https://github.com/guiferpa)
@@ -51,7 +49,7 @@ rm -rf /Users/user/src/github.com/guiferpa/plumber/bin/plr
 - [Understanding Git Data Model](https://hackernoon.com/https-medium-com-zspajich-understanding-git-data-model-95eb16cc99f5) by Zvonimir Spajic
 - [Understanding Git Branching](https://hackernoon.com/understanding-git-branching-2662f5882f9) by Zvonimir Spajic
 
-### Step by step
+## System
 > :warning: _Work in progress_
 
 ## License
