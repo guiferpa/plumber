@@ -7,9 +7,13 @@ DIST_DIR ?= $(PWD)/bin
 BUILD := $(DIST_DIR)/$(binaryalias)
 PLUMBER := $(BIN_DIR)/$(binaryalias)
 
-.PHONY: clean all
+.PHONY: clean all test
 
-all: $(BUILD) $(PLUMBER)
+all: $(BUILD) $(PLUMBER) test
+
+test:
+	bats $(shell find ./lib/*.test.sh -type f)
+	rm -rf ./tmp
 
 $(PLUMBER):
 	ln -s $(BUILD) $(PLUMBER)

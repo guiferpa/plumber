@@ -1,16 +1,13 @@
 write_object() {
-  local hash=`plr hash-object $@`
+  local f=${@:0:1}
+  local c=${@:2}
 
-  local content=$@
-  local header="blob ${#content}\0"
+  local hr="blob ${#c}\0"
 
-  local head=".git/objects/${hash:0:2}"
-  local tail="${head}/${hash:2}"
+  mkdir -p $(dirname $f)
+  printf "${hr}${c}" | python -c "import zlib,sys; \
+    print(zlib.compress(sys.stdin.read()))" >$f
 
-  mkdir -p $head
-  printf "${header}${content}" | python -c "import zlib,sys; \
-    print(zlib.compress(sys.stdin.read()))" >$tail
-
-  echo $hash
+  echo $f
   okfn
 }

@@ -3,7 +3,8 @@ add() {
   for a in $@; do
     local p=`cat $a 2> /dev/null`
     if [[ "${?}" == "0" ]]; then
-      local b=`plr write-object $p`
+      local h=`plr hash-object $p`
+      local b=`plr write-object .git/objects/${h:0:2}/${h:2} $p`
       if [ -z "${b}" ]; then
         echo $white"Something wrong when created blob"$white
         failfn 1
