@@ -52,5 +52,11 @@ rm -rf /Users/user/src/github.com/guiferpa/plumber/bin/plr
 ## System
 > :warning: _Work in progress_
 
+## Contribute
+__CONTRIBUTE.md__ is coming soon
+
+### Dependencies
+- [bats](https://github.com/sstephenson/bats) - To run tests
+
 ## License
 [MIT](https://github.com/guiferpa/plumber/blob/master/LICENSE)
