@@ -81,6 +81,8 @@ failfn () {
 
 import lib/hash_object.sh
 import lib/write_object.sh
+import lib/read_object.sh
+import lib/read_index.sh
 import lib/add.sh
 import lib/branch.sh
 import lib/commit.sh
