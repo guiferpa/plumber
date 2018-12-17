@@ -71,10 +71,6 @@ okfn () {
   exit 0
 }
 
-warnfn() {
-  echo $yellow"WARN"$white" $1"
-}
-
 failfn () {
   exit $1
 }
@@ -136,6 +132,6 @@ distfn() {
 [ "${1}" == "-v" ] || \
 [ "${1}" == "--version" ] && distfn
 
-$(echo $1 | sed "s/-/_/") ${@:2}
+$(echo $1 | sed 's/-/_/g') ${@:2}
 
 failfn 1

@@ -11,9 +11,9 @@ PLUMBER := $(BIN_DIR)/$(binaryalias)
 
 all: $(BUILD) $(PLUMBER) test
 
-test:
-	bats $(shell find ./lib/*.test.sh -type f)
-	rm -rf ./tmp
+# test:
+# 	bats $(shell find ./lib/*.test.sh -type f)
+# 	rm -rf ./tmp
 
 $(PLUMBER):
 	ln -s $(BUILD) $(PLUMBER)

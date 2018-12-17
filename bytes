@@ -1,0 +1,30 @@
+0: [00 00 00 91] [00] [32 31 20] [33 0a] [9a bb f5 90 6e bf f6 f3 6e d9 bb 91 2b d5 a0 b7 31 ea 4b f6]
+[00 00 00 91]: 145 size (base 10)
+[00]: nil (ascii)
+[32 31 20]: 21 (ascii)
+[33 0a]: 3 (ascii)
+[9a bb f5 90 6e bf f6 f3 6e d9 bb 91 2b d5 a0 b7 31 ea 4b f6]: <sha1> (base 16)
+
+1: [6c 69 62 00] [31 33 20] [30 0a] [d8 16 d2 d6 98 32 5d 03 6b 8f f7 9f 20 d6 ce 9d 87 3b c3 88]
+[6c 69 62 00]: lib (ascii)
+[31 33 20]: 13 (ascii)
+[30 0a]: 0 (ascii)
+[d8 16 d2 d6 98 32 5d 03 6b 8f f7 9f 20 d6 ce 9d 87 3b c3 88]: <sha1> (base 16)
+
+2: [64 6f 63 73 00] [31 20] [31 0a] [b9 bd ff 22 b1 ad 25 83 e9 b0 40 23 ea e0 ab 85 19 67 d7 a8]
+[64 6f 63 73 00]: docs (ascii)
+[31 20]: 1 (ascii)
+[31 0a]: 1 (ascii)
+[b9 bd ff 22 b1 ad 25 83 e9 b0 40 23 ea e0 ab 85 19 67 d7 a8]: <sha1> (base 16)
+
+  2.1: [73 79 73 74 65 6d 00] [31 20] [30 0a] [5b fa d2 b3 f8 e4 83 b6 b1 73 d8 aa ff 19 59 7e 84 62 6f 15]
+  [73 79 73 74 65 6d 00]: system (ascii)
+  [31 20]: 1 (ascii)
+  [30 0a]: 0 (ascii)
+  [5b fa d2 b3 f8 e4 83 b6 b1 73 d8 aa ff 19 59 7e 84 62 6f 15]: <sha1> (base 16)
+
+3: [74 6f 6f 6c 73 00] [31 20] [30 0a] [54 90 d0 2c 57 c7 d6 ee 67 52 67 20 24 83 b5 44 70 e5 7b ca]
+[74 6f 6f 6c 73 00]: tools (ascii)
+[31 20]: 1 (ascii)
+[30 0a]: 0 (ascii)
+[54 90 d0 2c 57 c7 d6 ee 67 52 67 20 24 83 b5 44 70 e5 7b ca]: <sha1> (base 16)
